@@ -1,0 +1,8 @@
+# Compiled ARM templates
+*.json
+!bicepconfig.json
+.DS_Store
+
+# Local, account-specific values (subscription IDs, billing scope)
+.env
+*.local.bicepparam
