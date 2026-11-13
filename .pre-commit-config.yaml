@@ -1,0 +1,11 @@
+# Git hooks managed by https://pre-commit.com
+# One-time setup after cloning:
+#   pip install pre-commit   (or: brew install pre-commit)
+#   pre-commit install
+# Scan the whole repo manually:
+#   pre-commit run --all-files
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.28.0
+    hooks:
+      - id: gitleaks

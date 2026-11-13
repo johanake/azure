@@ -1,0 +1,22 @@
+# gitleaks config: the built-in rules (API keys, tokens, private keys, ...)
+# plus Azure account identifiers that should stay in the gitignored infra/.env.
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "azure-billing-scope"
+description = "Azure billing account / profile / invoice section ID"
+regex = '''(?i)/providers/Microsoft\.Billing/billingAccounts/[0-9a-f]{8}-[0-9a-f-]{27}'''
+keywords = ["billingaccounts"]
+
+[[rules]]
+id = "azure-subscription-id"
+description = "Hard-coded Azure subscription ID"
+regex = '''(?i)(?:subscriptions/|subscription_?id['"]?\s*[:=]\s*['"])([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})'''
+secretGroup = 1
+keywords = ["subscription"]
+
+[allowlist]
+description = "Template with placeholders only"
+paths = ['''infra/\.env\.example$''']

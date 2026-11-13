@@ -46,6 +46,18 @@ Tenant Root Group                                     <- 01-management-groups
   `main.bicep` files compose the modules, and the `.bicepparam` files supply
   the values.
 
+## Secret scanning
+
+A [gitleaks](https://github.com/gitleaks/gitleaks) pre-commit hook blocks
+commits that contain secrets. `.gitleaks.toml` adds rules for Azure
+subscription IDs and billing scopes, which belong in the gitignored
+`infra/.env`. Set it up once after cloning:
+
+```bash
+pip install pre-commit      # or: brew install pre-commit
+pre-commit install
+```
+
 ## Deploying (in order)
 
 ```bash
