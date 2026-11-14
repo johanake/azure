@@ -4,7 +4,7 @@
 //
 // This is what an application team owns: its own resource group(s) and the
 // resources the app needs. It inherits policy/RBAC from the management groups
-// above it and reuses the shared modules in infra/modules.
+// above it and reuses the shared modules in ../../modules.
 //
 // Copy this folder to add another workload (e.g. workload-zones/billing-api).
 //
